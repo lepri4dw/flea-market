@@ -5,9 +5,10 @@ interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
   label: string;
+  required?: true;
 }
 
-const FileInput: React.FC<Props> = ({onChange, name, label}) => {
+const FileInput: React.FC<Props> = ({onChange, name, label, required}) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [filename, setFilename] = useState('');
@@ -42,7 +43,7 @@ const FileInput: React.FC<Props> = ({onChange, name, label}) => {
           <TextField
             disabled
             label={label}
-            value={filename}
+            value={filename} required={required || false}
             onClick={activateInput}
           />
         </Grid>

@@ -5,6 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import Register from "./features/users/Register";
 import Login from "./features/users/Login";
 import Items from "./features/items/Items";
+import ItemForm from "./features/items/components/ItemForm";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/items-by-category/:category" element={<Items/>}/>
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/new-item" element={<ItemForm/>}/>
             <Route path="/*" element={<h1>Not Found! This page does not exist!</h1>}/>
           </Routes>
         </Container>
