@@ -16,7 +16,9 @@ const Register = () => {
 
   const [state, setState] = useState<RegisterMutation>({
     username: '',
-    password: ''
+    password: '',
+    displayName: '',
+    phoneNumber: '',
   });
 
   const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,14 +60,15 @@ const Register = () => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <Box component="form" noValidate onSubmit={submitFormHandler} sx={{mt: 3}}>
+        <Box component="form" onSubmit={submitFormHandler} sx={{mt: 3}}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
+                required
                 label="Username"
                 name="username"
                 autoComplete="new-username"
-                value={state.username} required
+                value={state.username}
                 onChange={inputChangeHandler}
                 error={Boolean(getFieldError('username'))}
                 helperText={getFieldError('username')}
@@ -73,11 +76,34 @@ const Register = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                required
+                name="displayName"
+                label="Display Name"
+                value={state.displayName}
+                onChange={inputChangeHandler}
+                error={Boolean(getFieldError('displayName'))}
+                helperText={getFieldError('displayName')}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                name="phoneNumber"
+                label="Phone Number"
+                type="tel"
+                value={state.phoneNumber}
+                onChange={inputChangeHandler}
+                error={Boolean(getFieldError('phoneNumber'))}
+                helperText={getFieldError('phoneNumber')}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
                 name="password"
                 label="Password"
                 type="password"
-                autoComplete="new-password"
-                value={state.password} required
+                value={state.password}
                 onChange={inputChangeHandler}
                 error={Boolean(getFieldError('password'))}
                 helperText={getFieldError('password')}

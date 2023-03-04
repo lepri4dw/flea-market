@@ -17,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/*" element={<h1>Not Found! This page does not exist!</h1>}/>
           </Routes>
         </Container>
       </main>

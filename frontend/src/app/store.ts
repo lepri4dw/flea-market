@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import {FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE} from 'redux-persist/es/constants';
 
 const usersPersistConfig = {
-  key: 'project:users',
+  key: 'market:users',
   storage,
   whitelist: ['user'],
 };
