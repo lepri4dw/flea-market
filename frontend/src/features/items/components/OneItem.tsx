@@ -24,12 +24,12 @@ const OneItem: React.FC<Props> = ({_id, title, image, price}) => {
   }
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <Card component={Link} to={'/items/' + _id} style={{textDecoration: "none"}}>
-        <CardActionArea>
+      <Card>
+        <CardActionArea component={Link} to={'/items/' + _id} style={{textDecoration: "none"}}>
           <ImageCardMedia image={cardImage} title={title}/>
           <CardContent>
             <Typography variant="h5">{title}</Typography>
-            <Typography variant="h6">{price} $</Typography>
+            <Typography variant="h6">{price} USD</Typography>
           </CardContent>
         </CardActionArea>
       </Card>

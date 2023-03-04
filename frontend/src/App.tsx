@@ -6,6 +6,7 @@ import Register from "./features/users/Register";
 import Login from "./features/users/Login";
 import Items from "./features/items/Items";
 import ItemForm from "./features/items/components/ItemForm";
+import FullItem from "./features/items/components/FullItem";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/new-item" element={<ItemForm/>}/>
+            <Route path="/items/:id" element={<FullItem/>}/>
             <Route path="/*" element={<h1>Not Found! This page does not exist!</h1>}/>
           </Routes>
         </Container>

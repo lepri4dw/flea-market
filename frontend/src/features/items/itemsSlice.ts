@@ -10,7 +10,7 @@ interface ItemsState {
   fetchOneItem: boolean;
   createLoading: boolean;
   createItemError: ValidationError | null;
-  deleteLoading: string | false;
+  deleteLoading: boolean;
 }
 
 const initialState: ItemsState = {
@@ -62,8 +62,8 @@ const itemsSlice = createSlice({
       state.createLoading = false;
     });
 
-    builder.addCase(deleteItem.pending, (state, {meta: {arg: itemId}}) => {
-      state.deleteLoading = itemId;
+    builder.addCase(deleteItem.pending, (state) => {
+      state.deleteLoading = true;
     });
     builder.addCase(deleteItem.fulfilled, (state) => {
       state.deleteLoading = false;

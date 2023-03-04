@@ -4,7 +4,7 @@ import {fetchCategories, selectCategories, selectCategoriesFetching} from "../..
 import {ItemMutation} from "../../../types";
 import {createItem} from "../itemsThunks";
 import {Navigate, useNavigate} from "react-router-dom";
-import {Alert, CircularProgress, Grid, MenuItem, TextField} from "@mui/material";
+import {Alert, CircularProgress, Grid, MenuItem, TextField, Typography} from "@mui/material";
 import FileInput from "../../../components/UI/FileInput/FileInput";
 import {LoadingButton} from "@mui/lab";
 import {selectCreateItemError, selectItemCreating} from "../itemsSlice";
@@ -69,6 +69,9 @@ const ItemForm = () => {
   return (
     <form onSubmit={submitFormHandler}>
       <Grid container direction="column" spacing={2}>
+        <Grid item xs>
+          <Typography variant="h5">New item</Typography>
+        </Grid>
         <Grid item xs>
           <TextField
             label="Category"

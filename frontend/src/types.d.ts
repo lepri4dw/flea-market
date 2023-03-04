@@ -9,6 +9,8 @@ export interface User {
   _id: string;
   username: string;
   token: string;
+  displayName: string;
+  phoneNumber: string;
 }
 
 export interface RegisterResponse {
@@ -56,6 +58,7 @@ export interface FullItem extends Item{
     title: string;
   };
   user: {
+    _id: string
     displayName: string;
     phoneNumber: string
   };

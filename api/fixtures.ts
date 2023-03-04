@@ -71,7 +71,7 @@ const run = async () => {
   }, {
     title: "Nike Air Jordan 1",
     price: 150,
-    description: 'Brand new Nike Air Jordan 1 in red and black',
+    description: 'Brand new Nike Air Jordan 1 in gray and black',
     category: clothes._id,
     image: "fixtures/jordans.webp",
     user: Artem._id,

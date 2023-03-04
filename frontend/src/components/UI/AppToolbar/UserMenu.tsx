@@ -32,7 +32,7 @@ const UserMenu: React.FC<Props> = ({user}) => {
         onClick={handleClick}
         color="inherit"
       >
-        Hello, {user.username}
+        Hello, {user.displayName}
       </Button>
       <Menu
         anchorEl={anchorEl}
