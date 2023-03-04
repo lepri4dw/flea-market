@@ -36,3 +36,40 @@ export interface LoginMutation {
   username: string;
   password: string;
 }
+
+export interface Category {
+  _id: string;
+  title: string;
+}
+
+export interface Item {
+  _id: string;
+  image: string | null;
+  title: string;
+  price: number;
+}
+
+export interface FullItem extends Item{
+  description: string;
+  category: {
+    _id: string;
+    title: string;
+  };
+  user: {
+    displayName: string;
+    phoneNumber: string
+  };
+}
+
+export interface ItemMutation {
+  title: string;
+  description: string;
+  category: string;
+  price: string;
+  image: File | null;
+}
+
+export interface ItemsWithCategoryName {
+  items: IItem[],
+  categoryName: string;
+}
