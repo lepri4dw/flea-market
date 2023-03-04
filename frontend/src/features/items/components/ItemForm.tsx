@@ -4,7 +4,7 @@ import {fetchCategories, selectCategories, selectCategoriesFetching} from "../..
 import {ItemMutation} from "../../../types";
 import {createItem} from "../itemsThunks";
 import {Navigate, useNavigate} from "react-router-dom";
-import {Alert, CircularProgress, Grid, MenuItem, TextField, Typography} from "@mui/material";
+import {CircularProgress, Grid, MenuItem, TextField, Typography} from "@mui/material";
 import FileInput from "../../../components/UI/FileInput/FileInput";
 import {LoadingButton} from "@mui/lab";
 import {selectCreateItemError, selectItemCreating} from "../itemsSlice";
@@ -125,13 +125,11 @@ const ItemForm = () => {
         <Grid item xs>
           <FileInput
             label="Image" onChange={fileInputChangeHandler}
-            name="image" required
+            name="image" required={true}
+            error={Boolean(getFieldError('image'))}
+            helperText={getFieldError('image')}
           />
         </Grid>
-
-        {getFieldError('image') && <Alert severity="error" sx={{mt: 3, width: '100%'}}>
-          {getFieldError('image')}
-        </Alert>}
 
         <Grid item xs>
           <LoadingButton loadingIndicator="Loading…" loading={creating} type="submit" color="primary" variant="contained">Create</LoadingButton>
